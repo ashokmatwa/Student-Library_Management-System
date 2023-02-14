@@ -19,4 +19,13 @@ public class AuthorController {
     public String createAuthor(@RequestBody Author author){
         return authorService.createAuthor(author);
     }
+
+    //get --> author by given id
+    //        list of books by author name
+
+    //update --> age by author name/id
+    //           list of books
+
+    //delete --> author
+    //           a book from list of books
 }

@@ -35,4 +35,22 @@ public class StudentService {
 
         return "student & card added successfully";
     }
+
+    public String getNameByEmail(String email){
+        Student student = studentRepository.findByEmail(email);
+        return student.getName();
+    }
+
+    public String updateMobileNo(Student newStudent){
+
+        //first fetch the original Student
+        Student originalStudent = studentRepository.findById(newStudent.getId()).get();
+
+        //keep the other properties as it is
+        //only change the required attributes
+        originalStudent.setMobileNo(newStudent.getMobileNo());
+
+        studentRepository.save(originalStudent);
+        return "Mobile No is updated";
+    }
 }

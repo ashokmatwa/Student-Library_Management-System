@@ -19,4 +19,14 @@ public class BookController {
     public String addBook(@RequestBody Book book){
         return bookService.addBook(book);
     }
+
+    //GET --> book by given id
+    //        author by book name
+    //        genre by book name
+    //        issued status by book name
+
+    //update --> issued status
+    //           ratings
+
+    //delete --> a book by id or name
 }
