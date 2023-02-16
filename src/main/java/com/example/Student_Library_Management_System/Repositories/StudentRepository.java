@@ -16,6 +16,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     //only define the function as it is in interface
     Student findByEmail(String email);
 
-    //sql --> select * from student where country=India;
-    List<Student> findByCountry(String country);
+    //sql --> select * from student where state=Rajasthan;
+    List<Student> findByState(String state);
 }

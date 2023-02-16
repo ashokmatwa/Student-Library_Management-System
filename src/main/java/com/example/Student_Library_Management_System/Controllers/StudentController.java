@@ -1,5 +1,6 @@
 package com.example.Student_Library_Management_System.Controllers;
 
+import com.example.Student_Library_Management_System.DTOs.StudentUpdateMobileRequestDto;
 import com.example.Student_Library_Management_System.Models.Student;
 import com.example.Student_Library_Management_System.Services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +22,15 @@ public class StudentController {
         return studentService.getNameByEmail(email);
     }
 
+//    @PutMapping("/update_mobileNo")
+//    public String updateMobileNo(@RequestBody Student student){
+//        return studentService.updateMobileNo(student);
+//    }
+
+    //using DTO
     @PutMapping("/update_mobileNo")
-    public String updateMobileNo(@RequestBody Student student){
-        return studentService.updateMobileNo(student);
+    public String updateMobileNo(@RequestBody StudentUpdateMobileRequestDto studentUpdateMobileRequestDto){
+        return studentService.updateMobileNo(studentUpdateMobileRequestDto);
     }
 
     //get student by given id
