@@ -67,6 +67,7 @@ public class BookService {
 
         List<Book> currentBooksWritten = author.getBooksWritten();
         currentBooksWritten.add(book);
+        author.setBooksWritten(currentBooksWritten); //-->mine
 
         authorRepository.save(author);
 
