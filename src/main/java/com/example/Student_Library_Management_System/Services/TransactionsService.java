@@ -43,7 +43,7 @@ public class TransactionsService {
         transaction.setBook(book);
         transaction.setCard(card);
         transaction.setIssued(true);
-        transaction.setTransactionsStatus(TransactionsStatus.PENDING);
+        //transaction.setTransactionsStatus(TransactionsStatus.PENDING);
 //        transaction.setTransactionId(UUID.randomUUID().toString());
 
         //Check for validations

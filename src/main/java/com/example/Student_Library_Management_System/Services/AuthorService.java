@@ -74,4 +74,32 @@ public class AuthorService {
 
         return authorResponseDto;
     }
+
+    public List<BookResponseDto> getBookList(String authorName){
+        Author author = authorRepository.findByName(authorName);
+        List<Book> bookList = author.getBooksWritten();
+
+        List<BookResponseDto> bookResponseDtoList = new ArrayList<>();
+
+        for(Book book : bookList){
+            BookResponseDto bookResponseDto = new BookResponseDto();
+            bookResponseDto.setName(book.getName());
+            bookResponseDto.setPages(book.getPages());
+            bookResponseDto.setRating(book.getRating());
+            bookResponseDto.setBookgenre(book.getBookGenre());
+
+            bookResponseDtoList.add(bookResponseDto);
+        }
+        return bookResponseDtoList;
+    }
+
+    public String updateAge(AuthorEntryDto authorEntryDto){
+        Author originalAuthor = authorRepository.findByName(authorEntryDto.getName());
+
+        originalAuthor.setAge(authorEntryDto.getAge());
+
+        authorRepository.save(originalAuthor);
+        return "Author's age updated successfully";
+
+    }
 }

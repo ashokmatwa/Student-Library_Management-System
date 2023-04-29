@@ -13,5 +13,6 @@ public enum BookGenre {
     SPIRITUAL,
     AUTOBIOGRAPHY,
     SELF_HELP,
-    BUSINESS
+    BUSINESS,
+    HISTORY
 }
